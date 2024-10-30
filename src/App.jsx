@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import ProductList from './components/Productlist.jsx';
-import Cart from './components/Cart.jsx';
+import ProductList from './components/ProductList.jsx';
+import Cart from './components/Cart';
 import './App.css';
 
 const App = () => {
@@ -22,6 +22,12 @@ const App = () => {
     }
   };
 
+  const updateCartItem = (productId, amount) => {
+    setCartItems(cartItems.map(item =>
+      item.id === productId ? { ...item, quantity: item.quantity + amount } : item
+    ).filter(item => item.quantity > 0));
+  };
+
   return (
     <div className="App">
       <header className="header">
@@ -32,7 +38,7 @@ const App = () => {
       </header>
       <div className="content">
         <ProductList products={products} addToCart={addToCart} />
-        {isCartOpen && <Cart cartItems={cartItems} />}
+        {isCartOpen && <Cart cartItems={cartItems} updateCartItem={updateCartItem} />}
       </div>
     </div>
   );

@@ -91,3 +91,28 @@
   justify-content: space-between;
   padding: 8px 0;
 }
+
+.cart-item button { 
+  background-color: #dc3545; 
+  color: white; 
+  border: none; 
+  cursor: pointer; 
+  padding: 5px 10px; 
+  margin-left: 10px; 
+}
+
+.cart-item button:hover { 
+  background-color: #c82333; 
+}
+.checkout-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.checkout-button:hover {
+  background-color: #0056b3;
+}
