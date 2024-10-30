@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import ProductList from './components/ProductList';
-import Cart from './components/Cart';
+import ProductList from './components/Productlist.jsx';
+import Cart from './components/Cart.jsx';
 import './App.css';
 
 const App = () => {

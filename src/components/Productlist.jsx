@@ -1,5 +1,6 @@
 import React from 'react';
-import Product from './Product';
+import PropTypes from 'prop-types';
+import Product from './Product.jsx';
 
 const ProductList = ({ products, addToCart }) => {
   return (
@@ -9,6 +10,18 @@ const ProductList = ({ products, addToCart }) => {
       ))}
     </div>
   );
+};
+
+ProductList.propTypes = {
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      image: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  addToCart: PropTypes.func.isRequired,
 };
 
 export default ProductList;
