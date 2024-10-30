@@ -1,42 +1,93 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.App {
+  font-family: 'Arial', sans-serif;
   text-align: center;
+  background-color: #f4f4f9;
+  padding: 20px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header {
+  background-color: #343a40;
+  color: white;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.header-logo {
+  margin-left: 20px;
+  width: 50px; /* Ajusta este valor según el tamaño deseado */
+  height: auto;
 }
 
-.card {
-  padding: 2em;
+.header-button {
+  margin-right: 20px;
+  background-color: #28a745;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
 }
 
-.read-the-docs {
-  color: #888;
+.header-button:hover {
+  background-color: #218838;
+}
+
+.content {
+  padding-top: 70px; /* espacio para la barra de navegación fija */
+}
+
+.cart {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border: 1px solid #ddd;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.product-box {
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin: 16px;
+  display: inline-block;
+  width: 200px;
+  background-color: white;
+  transition: transform 0.2s ease;
+}
+
+.product-box:hover {
+  transform: scale(1.05);
+}
+
+.product-box img {
+  width: 100%;
+  height: auto;
+}
+
+.product-box button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.product-box button:hover {
+  background-color: #218838;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
 }
