@@ -1,15 +1,19 @@
-import React, { useState } from 'react';
-import ProductList from './components/ProductList.jsx';
+import React, { useState, useEffect } from 'react';
+import ProductList from './components/ProductList';
 import Cart from './components/Cart';
 import './App.css';
 
 const App = () => {
   const [cartItems, setCartItems] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const products = [
-    { id: 1, name: 'Product 1', price: 10, image: '/path-to-image-1.jpg' },
-    { id: 2, name: 'Product 2', price: 20, image: '/path-to-image-2.jpg' },
-  ];
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3001/api/products')
+      .then(response => response.json())
+      .then(data => setProducts(data))
+      .catch(error => console.error('Error fetching products:', error));
+  }, []);
 
   const addToCart = (product) => {
     const existingProduct = cartItems.find(item => item.id === product.id);
@@ -45,3 +49,4 @@ const App = () => {
 };
 
 export default App;
+
